@@ -1,4 +1,18 @@
 services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      CHROMA_PERSIST_DIRECTORY: /app/chroma_data
+    depends_on:
+      - redis
+    volumes:
+      - chroma_data:/app/chroma_data
+
   redis:
     image: redis:7-alpine
     ports:
@@ -9,3 +23,4 @@ services:
 
 volumes:
   redis_data:
+  chroma_data:
