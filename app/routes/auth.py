@@ -14,8 +14,8 @@ class LoginRequest(BaseModel):
     password: str = Field(..., min_length=6, max_length=100, description="Password for login")
 
 class AuthResponse(BaseModel):
-    access_token: str,
-    token_type: str = "bearer",
+    access_token: str
+    token_type: str = "bearer"
     username: str
 
 @router.post("/register", response_model=AuthResponse, status_code=status.HTTP_201_CREATED)
