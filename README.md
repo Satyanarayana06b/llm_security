@@ -11,6 +11,7 @@ A **secure RAG-powered internal chatbot** for a fictional company that demonstra
   - [Architecture Overview](#architecture-overview)
   - [The 9 Security Features](#the-9-security-features)
   - [Tech Stack](#tech-stack)
+  - [Run the application](#run-the-application)
 
 ---
 
@@ -64,3 +65,7 @@ A **secure RAG-powered internal chatbot** for a fictional company that demonstra
 | Authentication | PyJWT | >= 2.10 |
 | Testing | pytest | >= 8.0 |
 | Containerization | Docker + docker-compose | - |
+
+## Run the application
+docker build -t llm_security .
+docker compose up -d redis && uv run python main.py

@@ -3,7 +3,7 @@ name = "llm-security"
 version = "0.1.0"
 description = "Demonstrates 9 llm security layers"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10,<3.13"
 dependencies = [
     "fastapi",
     "uvicorn[standard]>=0.34.0",
